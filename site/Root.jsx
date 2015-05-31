@@ -3,6 +3,7 @@ var React = require('react')
 var Head = require('./Head.jsx')
 var Header = require('./Header.jsx')
 var Tutorial = require('./Tutorial.jsx')
+var Issues = require('./Issues.jsx')
 var Footer = require('./Footer.jsx')
 
 var Root = React.createClass({
@@ -17,6 +18,7 @@ var Root = React.createClass({
         <body className="p3 container">
           <Header {...this.props} />
           <Tutorial {...this.props} />
+          <Issues {...this.props} />
           <Footer {...this.props} />
           <script id="initial-props" type="application/json" dangerouslySetInnerHTML={initialProps} />
           <script src="bundle.js" />

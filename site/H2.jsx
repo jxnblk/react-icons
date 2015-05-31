@@ -7,6 +7,7 @@ var H2 = React.createClass({
 
     var styles = {
       heading: {
+        paddingTop: '2rem'
       },
       link: {
         color: 'inherit'
@@ -19,7 +20,7 @@ var H2 = React.createClass({
     id = encodeURI(id)
 
     return (
-      <h2 id={id}>
+      <h2 id={id} style={styles.heading}>
         <a href={'#'+id} style={styles.link}>
           {this.props.children}
         </a>
