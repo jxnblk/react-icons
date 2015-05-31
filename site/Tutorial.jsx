@@ -134,7 +134,7 @@ var Tutorial = React.createClass({
           Uppercase letters are used for absolute coordinates, while lowercase is used for relative coordinates.
           This tutorial only uses absolute coordinates, so each letter must be uppercase.
           Only three commands will be used to create the icon: Move <code>M</code>, Line To <code>L</code>, and Arc <code>A</code>.
-          To read more about the SVG path element, see this <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths" target="_blank">MDN Tutorial</a>.
+          To read more about the SVG path element, see this <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths" target="_blank">MDN tutorial</a>.
         </p>
         <p>
           The <code>pathData</code> variable is constructed with an array followed by the <code>.join()</code> method.
@@ -192,6 +192,14 @@ var Tutorial = React.createClass({
         </div>
         <Highlight code={this.props.code.sunBurst} />
         <p>
+          Here the Arc <code>A</code> command is being used to draw part of the middle circle.
+          The first two values in the Arc command represent the x and y radii.
+          The next three values are booleans representing the <code>x-axis-rotation</code>, <code>large-arc-flag</code>, and the <code>sweep-flag</code>.
+          The third value is set to <code>1</code> (true) to ensure the arc curves in the right direction.
+          The last two values are the x and y coordinates for where the arc should end.
+          To read more about the Arc command see the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths#Arcs" target="_blank">MDN tutorial</a>.
+        </p>
+        <p>
           This function arbitrarily adds and subtracts 6° to the angle to create the teeth.
           Add the following to the render function to calculate the angles based on the number of teeth.
         </p>
@@ -229,13 +237,18 @@ var Tutorial = React.createClass({
 
         <H2>Adding a Hole</H2>
         <p>
+          Now all that’s left is to add the hole in the center.
+          To create a circle that subtracts (or punches) from the outer shape,
+          use two Arc commands to draw a circle in a counterclockwise direction.
+          With the path element, intersecting shapes subtract from each other when they are drawn in opposite directions.
         </p>
-        
-
-
+        <Highlight code={this.props.code.hole} />
+        <div className="center">
+          <Cog size={256} />
+        </div>
 
         <H2>Live Demo</H2>
-        <p>size, middle, inner, teeth, splay</p>
+        <pre>size, middle, inner, teeth, splay</pre>
 
       </div>
     )

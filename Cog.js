@@ -46,6 +46,10 @@ var Icon = React.createClass({displayName: "Icon",
       return c + r * Math.sin(rad(a))
     }
 
+    var num = function(n) {
+      return (n < 0.0000001) ? 0 : n 
+    }
+
     // Angle offsets to splay tooth
     var ta = angle / 4
     var splay = this.props.splay * ta
@@ -60,12 +64,6 @@ var Icon = React.createClass({displayName: "Icon",
       return Math.cos(rad(a)) * w
     }
 
-    // Prevent scientific notation when converting
-    // small numbers to string
-    var num = function(n) {
-      return (n < 0.0000001) ? 0 : n 
-    }
- 
     var drawTeeth = function(n) {
       var d = []
       for (var i = 0; i < n; i++) {
@@ -92,7 +90,7 @@ var Icon = React.createClass({displayName: "Icon",
       return d.join(' ')
     }
 
-    var inner = function() {
+    var hole = function() {
       return [
         'M', c, c - r3,
         'A', r3, r3,
@@ -106,7 +104,7 @@ var Icon = React.createClass({displayName: "Icon",
 
     var pathData = [
       drawTeeth(this.props.teeth),
-      inner()
+      hole()
     ].join(' ')
 
     return (

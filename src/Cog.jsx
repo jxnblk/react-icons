@@ -90,7 +90,7 @@ var Icon = React.createClass({
       return d.join(' ')
     }
 
-    var inner = function() {
+    var hole = function() {
       return [
         'M', c, c - r3,
         'A', r3, r3,
@@ -104,7 +104,7 @@ var Icon = React.createClass({
 
     var pathData = [
       drawTeeth(this.props.teeth),
-      inner()
+      hole()
     ].join(' ')
 
     return (

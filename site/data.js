@@ -50,6 +50,7 @@ module.exports = {
     flatTeeth: fs.readFileSync(path.join(__dirname, './code-examples/flat-teeth.jsx'), 'utf8'),
     splay: fs.readFileSync(path.join(__dirname, './code-examples/splay.jsx'), 'utf8'),
     splayDraw: fs.readFileSync(path.join(__dirname, './code-examples/splay-draw.jsx'), 'utf8'),
+    hole: fs.readFileSync(path.join(__dirname, './code-examples/hole.jsx'), 'utf8'),
     build1: fs.readFileSync(path.join(__dirname, './code-examples/build-1.js'), 'utf8'),
     build2: fs.readFileSync(path.join(__dirname, './code-examples/build-2.js'), 'utf8'),
     packageScripts: fs.readFileSync(path.join(__dirname, './code-examples/package-scripts.json'), 'utf8'),
