@@ -13,6 +13,7 @@ var Demo = React.createClass({
       d2: .6875,
       d3: .375,
       splay: .375,
+      showGuidelines: false,
     }
   },
 
@@ -22,6 +23,11 @@ var Demo = React.createClass({
     state[name] = e.target.value
     console.log(name, state[name])
     this.setState(state)
+  },
+
+  toggleGuidelines: function() {
+    var showGuidelines = !this.state.showGuidelines
+    this.setState({ showGuidelines: showGuidelines })
   },
 
   render: function() {
@@ -38,13 +44,8 @@ var Demo = React.createClass({
     return (
       <div>
         <div className="center mb2">
-          <Cog
-            size={512}
-            teeth={teeth}
-            d2={d2}
-            d3={d3}
-            splay={splay}
-            />
+          <Cog {...this.state}
+            size={512} />
         </div>
         <div className="md-flex mb2 mxn2">
           <div className="md-col-3 px2">
@@ -82,6 +83,13 @@ var Demo = React.createClass({
               value={splay}
               onChange={this.handleChange} />
           </div>
+        </div>
+        <div>
+          <button
+            onClick={this.toggleGuidelines}
+            className="btn btn-outline blue">
+            {this.state.showGuidelines ? 'Hide Guidelines' : 'Show Guidelines'}
+          </button>
         </div>
         <div>
           <h3 className="h5">SVG Code</h3>

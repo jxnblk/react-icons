@@ -29,6 +29,7 @@ module.exports = {
           'heading-font-weight': '600',
           'bold-font-weight': '600',
           'button-font-weight': '600',
+          'button-font-size': 'var(--h6)',
           'h1': '2.5rem',
           'h2': '1.75rem',
           'h3': '1.375rem',

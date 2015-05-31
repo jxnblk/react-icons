@@ -198,9 +198,9 @@ var Guidelines = React.createClass({displayName: "Guidelines",
         var a1 = a + ta + splay
         var a2 = a + angle - ta - splay
         var line = [
-          'M', c, c,
+          'M', rx(r3, a1), ry(r3, a1),
           'L', rx(r1, a1), ry(r1, a1),
-          'M', c, c,
+          'M', rx(r3, a2), ry(r3, a2),
           'L', rx(r1, a2), ry(r1, a2)
         ].join(' ')
         d.push(line)
