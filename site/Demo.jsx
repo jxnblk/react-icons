@@ -21,7 +21,6 @@ var Demo = React.createClass({
     var name = e.target.name
     var state = this.state
     state[name] = e.target.value
-    console.log(name, state[name])
     this.setState(state)
   },
 
