@@ -1,5 +1,7 @@
 
 var React = require('react')
+var clrs = require('colors.css')
+var Cog = require('../Cog')
 
 var Header = React.createClass({
 
@@ -8,6 +10,9 @@ var Header = React.createClass({
     var modified = new Date(this.props.modified).toDateString()
     return (
       <header className="py3">
+        <div className="mb2 center">
+          <Cog size={320} fill={clrs.blue} showGuidelines />
+        </div>
         <h3 className="h5 mt0 mb1">
           <a href="/" className="black">Jxnblk.com</a>
         </h3>

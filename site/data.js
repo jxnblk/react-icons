@@ -34,6 +34,7 @@ module.exports = {
           'h3': '1.375rem',
           'h4': '1.25rem',
           'h5': '1rem',
+          'h6': '.875rem',
           'pre-font-size': 'var(--h5)',
           'container-width': '48em',
           'black': '#134',

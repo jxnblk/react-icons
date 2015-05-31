@@ -1,7 +1,9 @@
 
 var React = require('react')
+var highlight = require('highlight.js')
 var Cog = require('../Cog')
 var Range = require('./Range.jsx')
+var beautify = require('js-beautify').html
 
 var Demo = React.createClass({
 
@@ -23,10 +25,16 @@ var Demo = React.createClass({
   },
 
   render: function() {
+
     var teeth = this.state.teeth
     var d2 = this.state.d2
     var d3 = this.state.d3
     var splay = this.state.splay
+
+    var svg = React.renderToStaticMarkup(<Cog {...this.state} />)
+    svg = beautify(svg, { indent_size: 2 })
+    var code = highlight.highlight('xml', svg).value
+
     return (
       <div>
         <div className="center mb2">
@@ -38,7 +46,7 @@ var Demo = React.createClass({
             splay={splay}
             />
         </div>
-        <div className="md-flex mxn2">
+        <div className="md-flex mb2 mxn2">
           <div className="md-col-3 px2">
             <Range id="teeth"
               label="Teeth"
@@ -74,6 +82,10 @@ var Demo = React.createClass({
               value={splay}
               onChange={this.handleChange} />
           </div>
+        </div>
+        <div>
+          <h3 className="h5">SVG Code</h3>
+          <pre dangerouslySetInnerHTML={{ __html: code }} />
         </div>
       </div>
     )

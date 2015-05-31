@@ -1,5 +1,6 @@
 
 var React = require('react')
+var clrs = require('colors.css')
 
 var Icon = React.createClass({
 
@@ -11,7 +12,8 @@ var Icon = React.createClass({
       d3: .375,
       teeth: 8,
       splay: .375,
-      fill: 'currentcolor'
+      fill: 'currentcolor',
+      showGuidelines: false // For demonstration
     }
   },
 
@@ -107,6 +109,11 @@ var Icon = React.createClass({
       hole()
     ].join(' ')
 
+    var guidelines
+    if (this.props.showGuidelines) {
+      guidelines = <Guidelines {...this.props} />
+    }
+
     return (
       <svg
         xmlns="http://www.w3.org/svg/2000"
@@ -115,11 +122,107 @@ var Icon = React.createClass({
         height={size}
         fill={fill}>
         <path d={pathData} />
+        {guidelines}
       </svg>
     )
 
   }
 
+})
+
+// Guidelines for Demonstration
+
+var Guidelines = React.createClass({
+
+  render: function() {
+    var size = this.props.size
+    var c = size / 2
+    var r1 = this.props.d1 * size / 2
+    var r2 = this.props.d2 * size / 2
+    var r3 = this.props.d3 * size / 2
+    var teeth = this.props.teeth
+    var angle = 360 / teeth
+    var styles = {
+      circle: {
+        fill: 'none',
+        stroke: clrs.red,
+        strokeWidth: 1,
+        opacity: 0.75
+      },
+      angles: {
+        fill: 'none',
+        stroke: clrs.red,
+        strokeWidth: 1,
+        opacity: 0.75
+      },
+      subangles: {
+        fill: 'none',
+        stroke: clrs.red,
+        strokeWidth: 1,
+        opacity: 0.25
+      },
+    }
+
+    var rad = function(a) {
+      return Math.PI * a / 180
+    }
+
+    var rx = function(r, a) {
+      return c + r * Math.cos(rad(a))
+    }
+
+    var ry = function(r, a) {
+      return c + r * Math.sin(rad(a))
+    }
+
+    var ta = angle / 4
+    var splay = this.props.splay * ta
+
+    var drawAngles = function() {
+      var d = []
+      for (var i = 0; i < teeth; i++) {
+        var a = angle * i
+        var line = [
+          'M', c, c,
+          'L', rx(r1, a), ry(r1, a)
+        ].join(' ')
+        d.push(line)
+      }
+      return d.join(' ')
+    }
+
+    var drawSubangles = function() {
+      var d = []
+      for (var i = 0; i < teeth; i++) {
+        var a = angle * i
+        var a1 = a + ta + splay
+        var a2 = a + angle - ta - splay
+        var line = [
+          'M', c, c,
+          'L', rx(r1, a1), ry(r1, a1),
+          'M', c, c,
+          'L', rx(r1, a2), ry(r1, a2)
+        ].join(' ')
+        d.push(line)
+      }
+      return d.join(' ')
+    }
+
+    var path = {
+      angles: drawAngles(),
+      subangles: drawSubangles()
+    }
+
+    return (
+      <g>
+        <circle style={styles.circle} cx={c} cy={c} r={r1} />
+        <circle style={styles.circle} cx={c} cy={c} r={r2} />
+        <circle style={styles.circle} cx={c} cy={c} r={r3} />
+        <path d={path.angles} style={styles.angles} />
+        <path d={path.subangles} style={styles.subangles} />
+      </g>
+    )
+  }
 })
 
 module.exports = Icon

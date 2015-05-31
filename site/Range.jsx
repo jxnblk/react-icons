@@ -8,7 +8,7 @@ var Range = React.createClass({
       <div>
         <label
           htmlFor={this.props.id}
-          className="h5 bold block">
+          className="h6 bold block">
           {this.props.label} ({this.props.value})
         </label>
         <input type="range"

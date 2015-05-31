@@ -25,7 +25,9 @@ var Tutorial = React.createClass({
           Certain types of illustrations and icons can also be difficult to create,
           and Illustrator leaves a lot of room for error.
         </p>
-        <Cog />
+        <div className="center mb2">
+          <Cog size={128} />
+        </div>
         <p>
           Take a settings cog icon as an example.
           It relies on radial symmetry and is based on three concentric circles,
@@ -91,7 +93,7 @@ var Tutorial = React.createClass({
         <Highlight code="npm run jsx" />
         <Highlight code="npm run build" />
 
-        <H3>The xmlns Attribute in React</H3>
+        <H2>The xmlns Attribute in React</H2>
         <p>
           At the time of this writing, React strips the xmlns attribute from the SVG.
           When using the SVG inline in HTML, this shouldn’t be a problem,
@@ -107,7 +109,7 @@ var Tutorial = React.createClass({
           Open web inspector to ensure that the SVG wrapper is there.
         </p>
 
-        <H3>Watching Changes</H3>
+        <H2>Watching Changes</H2>
         <p>
           To watch changes as the icon is developed run the watch:jsx command to transpile the jsx file to js.
         </p>
@@ -198,7 +200,7 @@ var Tutorial = React.createClass({
           To prevent this from happening, the <code>num</code> function is used to return <code>0</code> for small numbers.
         </p>
 
-        <H3>Shaping the Teeth</H3>
+        <H2>Shaping the Teeth</H2>
         <p>
           Now that the function to loop through the number of teeth is set up,
           change the commands in the <code>line</code> array to draw lines to the middle circle of the cog.
@@ -231,7 +233,7 @@ var Tutorial = React.createClass({
           <FlatTeeth />
         </div>
 
-        <H3>Splayed Teeth</H3>
+        <H2>Splayed Teeth</H2>
         <p>
           The icon is starting to take shape, but the sides of each tooth are based on angles from the center.
           To splay the sides of the teeth in the other direction, make edits and add the following.
@@ -259,9 +261,9 @@ var Tutorial = React.createClass({
           With the path element, intersecting shapes subtract from each other when they are drawn in opposite directions.
         </p>
         <Highlight code={this.props.code.hole} />
-        <div className="center">
-          <Cog size={256} />
-        </div>
+        <p>
+          Now you should have an adjustable cog icon similar to the one below.
+        </p>
 
         <div className="py4">
           <H2>Live Demo</H2>
