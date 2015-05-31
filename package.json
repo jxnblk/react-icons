@@ -1,8 +1,8 @@
 {
   "name": "react-icons",
-  "title": "Building Mathematical SVG Icons with React",
+  "title": "Building SVG Icons with React",
   "version": "1.0.0",
-  "description": "",
+  "description": "How to Create Mathematically-Derived SVG Icons Using JavaScript and React",
   "main": "index.js",
   "scripts": {
     "build": "node build",
@@ -14,13 +14,23 @@
   },
   "author": "Brent Jackson",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "svg",
+    "icon",
+    "icons",
+    "tutorial"
+  ],
   "devDependencies": {
     "basscss": "^7.0.0-beta.1",
+    "basscss-color-input-range": "^1.0.0-beta.0",
     "basscss-highlight": "^0.1.0",
+    "basscss-input-range": "^2.0.0-beta.0",
     "cssnext": "^1.5.2",
     "highlight.js": "^8.6.0",
     "json-loader": "^0.5.2",
     "jsx-loader": "^0.13.2",
+    "jxnblk-avatar": "^1.1.0",
     "lodash": "^3.9.3",
     "marked": "^0.3.3",
     "node-libs-browser": "^0.5.2",

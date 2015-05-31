@@ -10,7 +10,7 @@ var Icon = React.createClass({
       d2: .6875,
       d3: .375,
       teeth: 8,
-      splay: 0.375,
+      splay: .375,
       fill: 'currentcolor'
     }
   },

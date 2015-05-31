@@ -10,6 +10,7 @@ var Polygon = require('./examples/Polygon.jsx')
 var SunBurst = require('./examples/SunBurst.jsx')
 var FlatTeeth = require('./examples/FlatTeeth.jsx')
 var Splayed = require('./examples/Splayed.jsx')
+var Demo = require('./Demo.jsx')
 
 var Tutorial = React.createClass({
 
@@ -50,8 +51,9 @@ var Tutorial = React.createClass({
         </p>
         <ul>
           <li>Overall dimensions</li>
-          <li>Three concentric with three different radii</li>
+          <li>Three concentric circles with three different radii</li>
           <li>The number of flat-edged, splayed teeth around the outside</li>
+          <li>The angle of each tooth</li>
           <li>Fill color for the SVG</li>
         </ul>
 
@@ -67,8 +69,12 @@ var Tutorial = React.createClass({
         </p>
         <Highlight code={this.props.code.build1} />
         <p>
-          This build script imports the Cog component, renders it to static markup, and saves the file in the <code>icons</code> folder.
+          This build script imports the Cog component, renders it to static markup, and saves the file in the <code>icons</code> directory.
         </p>
+        <p>
+          Go ahead and make a new directory for the icons.
+        </p>
+        <Highlight code="mkdir icons" />
         <p>
           Next create a <code>src</code> folder and a new <code>Cog.jsx</code> file.
         </p>
@@ -78,6 +84,10 @@ var Tutorial = React.createClass({
         </p>
 
         <Highlight code={this.props.code.packageScripts} />
+        <p>
+          Run the following scripts to compile <code>Cog.jsx</code> to plain JavaScript.
+          Run the build script to create an SVG named <code>cog-icon.svg</code>
+        </p>
         <Highlight code="npm run jsx" />
         <Highlight code="npm run build" />
 
@@ -89,16 +99,22 @@ var Tutorial = React.createClass({
           To get around this limitation, add a wrapping SVG tag in <code>build.js</code>.
         </p>
         <Highlight code={this.props.code.build2} />
+
+        <p>
+          After making these changes, run <code>npm run build</code> to rebuild the SVG.
+          Open the SVG file in a browser to see the icon as it progresses.
+          At this point, it should appear blank.
+          Open web inspector to ensure that the SVG wrapper is there.
+        </p>
+
         <H3>Watching Changes</H3>
         <p>
           To watch changes as the icon is developed run the watch:jsx command to transpile the jsx file to js.
         </p>
         <Highlight code="npm run watch:jsx" />
         <p>
-          Make a folder called <code>icons</code> and run <code>npm run build</code> to save a new SVG.
-          Open the SVG file in a browser to see the icon as it progresses.
-          At this point, it should appear blank.
-          Open web inspector to ensure that the SVG wrapper is there.
+          For each change you’ll need to rerun the build script.
+          You can also set up watching for build script, but this is beyond the scope of this tutorial.
         </p>
 
         <H2>Default Props</H2>
@@ -247,8 +263,10 @@ var Tutorial = React.createClass({
           <Cog size={256} />
         </div>
 
-        <H2>Live Demo</H2>
-        <pre>size, middle, inner, teeth, splay</pre>
+        <div className="py4">
+          <H2>Live Demo</H2>
+          <Demo />
+        </div>
 
       </div>
     )

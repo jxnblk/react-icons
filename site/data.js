@@ -4,15 +4,18 @@ var path = require('path');
 var pkg = require('../package.json')
 var cssnext = require('cssnext')
 
-var content = fs.readFileSync(path.join(__dirname, '..', 'README.md'), 'utf8')
 
 module.exports = {
   name: pkg.name,
   title: pkg.title,
   description: pkg.description,
-  content: content,
+  keywords: pkg.keywords,
+  created: '05/31/2015',
+  modified: new Date().toLocaleDateString(),
   css: cssnext([
     '@import "basscss";',
+    '@import "basscss-input-range";',
+    '@import "basscss-color-input-range";',
     '@import "basscss-highlight";',
     '@import "site/style.css";'
   ].join(''), {
@@ -22,10 +25,10 @@ module.exports = {
       colorRgba: false,
       customProperties: {
         variables: {
-          //'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif',
-          'heading-font-weight': '500',
-          'bold-font-weight': '500',
-          'button-font-weight': '500',
+          'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif',
+          'heading-font-weight': '600',
+          'bold-font-weight': '600',
+          'button-font-weight': '600',
           'h1': '2.5rem',
           'h2': '1.75rem',
           'h3': '1.375rem',

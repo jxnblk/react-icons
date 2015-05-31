@@ -1,4 +1,10 @@
 
+svg {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
 pre {
   padding: var(--space-2);
   border-radius: var(--border-radius);
@@ -14,10 +20,12 @@ code {
 .georgia { font-family: Georgia, serif }
 
 .prose p {
-  font-family: Georgia, serif;
   line-height: 1.625;
+  /*
+  font-family: Georgia, serif;
   margin-top: 1em;
   margin-bottom: 2em;
+  */
 }
 
 .prose p:first-child {

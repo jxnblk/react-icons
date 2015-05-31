@@ -10,4 +10,4 @@ var build = function(name, props) {
 
 }
 
-build('default', {})
+build('cog-icon', {})
