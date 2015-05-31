@@ -1,27 +1,24 @@
-var React = require('react');
+var React = require('react')
 
 var Cog = React.createClass({
 
   getDefaultProps: function() {
     return {
-      size: 32,
+      size: 64,
       fill: 'currentcolor'
     }
   },
 
   render: function() {
 
-    // By using props, the config object in build.js
-    // can change the size, fill, and other properties
-    var size = this.props.size;
-    var fill = this.props.fill;
+    var size = this.props.size
+    var fill = this.props.fill
 
-    var viewBox = [0, 0, size, size].join(' ');
+    var viewBox = [0, 0, size, size].join(' ')
 
-    // Placeholder for the path's d attribute value
     var pathData = [
       ''
-    ].join(' ');
+    ].join(' ')
 
     return (
       <svg xmlns="http://www.w3.org/svg/2000"
@@ -37,4 +34,4 @@ var Cog = React.createClass({
 
 });
 
-module.exports = Cog;
+module.exports = Cog

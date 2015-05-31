@@ -1,4 +1,3 @@
-
 var fs = require('fs')
 var React = require('react')
 var Cog = require('./Cog')
@@ -12,4 +11,3 @@ var build = function(name, props) {
 }
 
 build('default', {})
-

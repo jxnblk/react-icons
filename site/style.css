@@ -4,11 +4,19 @@ pre {
   border-radius: var(--border-radius);
 }
 
+code {
+  padding-left: calc(var(--space-1)/2);
+  padding-right: calc(var(--space-1)/2);
+  color: var(--navy);
+  background-color: color(var(--aqua) a(.25));
+}
+
 .georgia { font-family: Georgia, serif }
 
 .prose p {
   font-family: Georgia, serif;
   line-height: 1.625;
+  margin-top: 1em;
   margin-bottom: 2em;
 }
 

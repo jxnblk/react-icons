@@ -6,9 +6,9 @@ var Icon = React.createClass({displayName: "Icon",
   getDefaultProps: function() {
     return {
       size: 64,
-      r1: 1,
-      r2: .6875,
-      r3: .375,
+      d1: 1,
+      d2: .6875,
+      d3: .375,
       teeth: 8,
       splay: 0.375,
       fill: 'currentcolor'
@@ -23,18 +23,16 @@ var Icon = React.createClass({displayName: "Icon",
     var c = size / 2
 
     // Radii
-    var r1 = this.props.r1 * size / 2
-    var r2 = this.props.r2 * size / 2
-    var r3 = this.props.r3 * size / 2
+    var r1 = this.props.d1 * size / 2
+    var r2 = this.props.d2 * size / 2
+    var r3 = this.props.d3 * size / 2
 
     // Angle
     var angle = 360 / this.props.teeth
     var offset = 90
 
     var fill = this.props.fill
-    var viewBox = [0, 0, size * 2, size * 2].join(' ')
-    var width = size * 2
-    var height = width
+    var viewBox = [0, 0, size, size].join(' ')
 
     var rad = function(a) {
       return Math.PI * a / 180
@@ -116,8 +114,8 @@ var Icon = React.createClass({displayName: "Icon",
       React.createElement("svg", {
         xmlns: "http://www.w3.org/svg/2000", 
         viewBox: viewBox, 
-        width: width, 
-        height: height, 
+        width: size, 
+        height: size, 
         fill: fill}, 
         React.createElement("path", {d: pathData})
       )

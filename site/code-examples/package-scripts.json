@@ -1,0 +1,5 @@
+"scripts": {
+  "build": "node build",
+  "jsx": "jsx -x jsx src .",
+  "watch:jsx": "jsx -w -x jsx src ."
+}
