@@ -52,11 +52,11 @@ var Icon = React.createClass({displayName: "Icon",
     var tw = Math.tan(rad(ta - splay)) * r1
 
     // Flat tooth end x and y coordinates
-    var wx = function(a, w) {
+    var tx = function(a, w) {
       return Math.sin(rad(a)) * w
     }
 
-    var wy = function(a, w) {
+    var ty = function(a, w) {
       return Math.cos(rad(a)) * w
     }
 
@@ -72,14 +72,13 @@ var Icon = React.createClass({displayName: "Icon",
         var a = angle * i - offset
         var a1 = a + ta + splay
         var a2 = a + angle - ta - splay
-        var moveLine = i === 0 ? 'M' : 'L'
         var line = [
-          moveLine,
-          num(rx(r1, a) + wx(a, tw)),
-          num(ry(r1, a) - wy(a, tw)),
+          (i === 0) ? 'M' : 'L',
+          num(rx(r1, a) + tx(a, tw)),
+          num(ry(r1, a) - ty(a, tw)),
           'L',
-          num(rx(r1, a) - wx(a, tw)),
-          num(ry(r1, a) + wy(a, tw)),
+          num(rx(r1, a) - tx(a, tw)),
+          num(ry(r1, a) + ty(a, tw)),
           'L',
           num(rx(r2, a1)),
           num(ry(r2, a1)),

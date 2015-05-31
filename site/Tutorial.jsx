@@ -4,8 +4,12 @@ var H2 = require('./H2.jsx')
 var H3 = require('./H3.jsx')
 var Cog = require('../Cog')
 var Highlight = require('./Highlight.jsx')
+
 var Square = require('./examples/Square.jsx')
-//var Markdown = require('./Markdown.jsx')
+var Polygon = require('./examples/Polygon.jsx')
+var SunBurst = require('./examples/SunBurst.jsx')
+var FlatTeeth = require('./examples/FlatTeeth.jsx')
+var Splayed = require('./examples/Splayed.jsx')
 
 var Tutorial = React.createClass({
 
@@ -139,24 +143,98 @@ var Tutorial = React.createClass({
         <p>
           To demonstrate how the path commands work, the following should create a rectangle based on the coordinates given.
         </p>
-        <Square />
+        <div className="center">
+          <Square />
+        </div>
         <Highlight code={this.props.code.pathSquare} />
 
-        <H2>Function to Build Teeth</H2>
-
-        <H3>Start with a Polygon</H3>
-        <p>Prevent scientific notation</p>
-        <p>Degrees to radians function</p>
-        <p>Functions to calculate x/y coordinates on a circle</p>
+        <H2>Building Teeth</H2>
+        <p>
+          To create teeth around the outer circle based on the number given in the <code>teeth</code> prop,
+          create a function that returns values for the points.
+          To calculate the x/y coordinates for each point around the outer circle, add the following functions.
+        </p>
+        <Highlight code={this.props.code.rxRy} />
+        <p>
+          The <code>rad</code> function converts degrees to radians for convenience and since the <code>Math.cos</code>, <code>Math.sin</code>, and <code>Math.tan</code> functions all require radians.
+          The <code>rx</code> and <code>ry</code> functions respectively calculate the x and y coordinates based on the radius and angle.
+        </p>
         <pre>circle x/y diagram</pre>
-        <p>Functions for offsetting corners of cog tooth</p>
+        <p>
+          Start with a polygon to see how the <code>teeth</code> prop can be adjusted to create different numbers of points.
+        </p>
+        <Highlight code={this.props.code.drawPolygon} />
+        <div className="center">
+          <Polygon />
+          <Polygon teeth={7} />
+          <Polygon teeth={6} />
+          <Polygon teeth={5} />
+        </div>
+        <p>
+          Passing the number of teeth to the <code>drawTeeth</code> function, it loops through and calculates each angle with the offset defined above.
+          Using a ternary operator, it either moves to the first point or draws a line to subsequent points.
+          The x and y coordinates are calculated with the <code>rx</code> and <code>ry</code> functions.
+          Then each command is pushed to the <code>d</code> array, and it is return as a string.
+        </p>
+        <p>
+          Since Math functions are calculating numbers that are being converted to strings for the <code>d</code> attribute,
+          JavaScript will convert extremely small numbers to scientific notation.
+          To prevent this from happening, the <code>num</code> function is used to return <code>0</code> for small numbers.
+        </p>
+
+        <H3>Shaping the Teeth</H3>
+        <p>
+          Now that the function to loop through the number of teeth is set up,
+          change the commands in the <code>line</code> array to draw lines to the middle circle of the cog.
+        </p>
+        <div className="center">
+          <SunBurst />
+        </div>
+        <Highlight code={this.props.code.sunBurst} />
+        <p>
+          This function arbitrarily adds and subtracts 6° to the angle to create the teeth.
+          Add the following to the render function to calculate the angles based on the number of teeth.
+        </p>
+        <Highlight code={this.props.code.flatTeeth} />
+        <p>
+          The tooth angle <code>ta</code> is one-fourth of the angle for each tooth.
+          The tooth width <code>tw</code> is based on that angle.
+          The <code>tx</code> and <code>ty</code> functions are used to calculate the x and y coordinates based on angle and distance.
+          These functions and values are added to the line array to offset points for the corners of the teeth and the points at which they intersect the middle circle.
+        </p>
         <pre>right triangle diagram</pre>
+        <div className="center">
+          <FlatTeeth />
+        </div>
 
-        <H3>Line to middle circle</H3>
-        <H3>Splay</H3>
-        <H3>Inner circle</H3>
+        <H3>Splayed Teeth</H3>
+        <p>
+          The icon is starting to take shape, but the sides of each tooth are based on angles from the center.
+          To splay the sides of the teeth in the other direction, make edits and add the following.
+        </p>
+        <Highlight code={this.props.code.splay} />
+        <p>
+          Splay, defined earlier in default props, represents a ratio of the tooth angle.
+          Since it’s a prop, adjustments to this angle can be made from the build script.
+          For the tooth width, the splay angle is subtracted from the tooth angle.
+        </p>
+        <p>
+          For the <code>drawTeeth</code> function,
+          splay is added and subtracted from the angles at which the side of the tooth should intersect the middle circle.
+        </p>
+        <Highlight code={this.props.code.splayDraw} />
+        <div className="center">
+          <Splayed />
+        </div>
 
-        <H2>Live Example</H2>
+        <H2>Adding a Hole</H2>
+        <p>
+        </p>
+        
+
+
+
+        <H2>Live Demo</H2>
         <p>size, middle, inner, teeth, splay</p>
 
       </div>

@@ -5,7 +5,7 @@ var Icon = React.createClass({
 
   getDefaultProps: function() {
     return {
-      size: 64,
+      size: 256,
       d1: 1,
       d2: .6875,
       d3: .375,
@@ -90,21 +90,9 @@ var Icon = React.createClass({
       return d.join(' ')
     }
 
-    var inner = function() {
-      return [
-        'M', c, c - r3,
-        'A', r3, r3,
-        '0 0 0',
-        c, c + r3,
-        'A', r3, r3,
-        '0 0 0',
-        c, c - r3,
-      ].join(' ')
-    }
 
     var pathData = [
-      drawTeeth(this.props.teeth),
-      inner()
+      drawTeeth(this.props.teeth)
     ].join(' ')
 
     return (

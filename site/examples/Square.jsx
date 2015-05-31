@@ -1,7 +1,7 @@
 
 var React = require('react')
 
-var Icon = React.createClass({
+var Square = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -46,5 +46,5 @@ var Icon = React.createClass({
 
 })
 
-module.exports = Icon
+module.exports = Square
 

@@ -1,16 +1,15 @@
 
 var React = require('react')
 
-var Icon = React.createClass({
+var FlatTeeth = React.createClass({
 
   getDefaultProps: function() {
     return {
-      size: 64,
+      size: 256,
       d1: 1,
       d2: .6875,
       d3: .375,
       teeth: 8,
-      splay: 0.375,
       fill: 'currentcolor'
     }
   },
@@ -52,8 +51,7 @@ var Icon = React.createClass({
 
     // Angle offsets to splay tooth
     var ta = angle / 4
-    var splay = this.props.splay * ta
-    var tw = Math.tan(rad(ta - splay)) * r1
+    var tw = Math.tan(rad(ta)) * r1
 
     // Flat tooth end x and y coordinates
     var tx = function(a, w) {
@@ -68,8 +66,8 @@ var Icon = React.createClass({
       var d = []
       for (var i = 0; i < n; i++) {
         var a = angle * i - offset
-        var a1 = a + ta + splay
-        var a2 = a + angle - ta - splay
+        var a1 = a + ta 
+        var a2 = a + angle - ta
         var line = [
           (i === 0) ? 'M' : 'L',
           num(rx(r1, a) + tx(a, tw)),
@@ -90,21 +88,8 @@ var Icon = React.createClass({
       return d.join(' ')
     }
 
-    var inner = function() {
-      return [
-        'M', c, c - r3,
-        'A', r3, r3,
-        '0 0 0',
-        c, c + r3,
-        'A', r3, r3,
-        '0 0 0',
-        c, c - r3,
-      ].join(' ')
-    }
-
     var pathData = [
-      drawTeeth(this.props.teeth),
-      inner()
+      drawTeeth(this.props.teeth)
     ].join(' ')
 
     return (
@@ -122,5 +107,5 @@ var Icon = React.createClass({
 
 })
 
-module.exports = Icon
+module.exports = FlatTeeth
 
