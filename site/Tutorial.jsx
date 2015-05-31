@@ -34,13 +34,14 @@ var Tutorial = React.createClass({
           It relies on radial symmetry and is based on three concentric circles,
           where lines from each tooth must intersect at points not easily determined within a two dimensional grid.
           Creating something like this in graphics software
-          would require using transformations every time an adjustment is made.
+          would require using transformations every time an adjustment was made.
           Luckily, some basic math can help out, and JavaScript excels at making these sorts of calculations.
         </p>
         <p>
-          Using a library like React allows for coupling between
-          the math involved and the SVG code,
-          and it provides an easy way to render static markup.
+          Although most of this could be achieved with plain JavaScript and other templating engines,
+          using a library like React allows for coupling between the math functions and the SVG code,
+          keeps things encapsulated into a single requirable component,
+          and provides an easy way to render static markup.
         </p>
         <p className="h5">
           Note: this tutorial focuses on using React as a stand-alone exploratory design tool,
@@ -48,7 +49,14 @@ var Tutorial = React.createClass({
         </p>
 
         <H2>Making a Cog Icon</H2>
-        <pre>TK sketch image</pre>
+        <figure className="center mb3">
+          <img src="http://jxnblk.s3.amazonaws.com/assets/images/cog-sketch-bw.jpg"
+            alt="Cog icon sketch"
+            width="320"
+            height="320"
+            className="fit" />
+          <figcaption>Icon sketch made using a salt shaker, Sixpoint can, and a quarter</figcaption>
+        </figure>
         <p>
           Looking at this sketch, there are some properties that can be handled with JavaScript variables:
         </p>
