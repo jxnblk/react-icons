@@ -53,7 +53,6 @@ var Tutorial = React.createClass({
           <img src="http://jxnblk.s3.amazonaws.com/assets/images/cog-sketch-bw.jpg"
             alt="Cog icon sketch"
             width="320"
-            height="320"
             className="fit" />
           <figcaption>Icon sketch made using a salt shaker, Sixpoint can, and a quarter</figcaption>
         </figure>
