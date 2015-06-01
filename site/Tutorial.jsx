@@ -21,12 +21,12 @@ var Tutorial = React.createClass({
         <p>
           While traditional graphics applications like Adobe Illustrator work well for certain tasks,
           they fall short when used to create pixel perfect, mathematically-derived graphics.
-          Anyone who’s attempted to create data visualizations with such software might better understand these limitations.
-          And whilte JavaScript libraries like D3 have helped out tremendously,
-          certain types of illustrations and icons can also be difficult to create,
+          Anyone who’s attempted to create data visualizations with such software might have encountered these limitations.
+          And while JavaScript libraries like D3 have helped out tremendously,
+          certain types of illustrations and icons can still be difficult to create,
           and tools like Illustrator leave a lot of room for error.
         </p>
-        <div className="center mb2">
+        <div className="center py2 mb2">
           <Cog size={128} />
         </div>
         <p>
@@ -39,7 +39,7 @@ var Tutorial = React.createClass({
         </p>
         <p>
           Although most of this could be achieved with plain JavaScript and other templating engines,
-          using a library like React allows for coupling between the math functions and the SVG code,
+          using a library like React allows for tight coupling between the math and the SVG code,
           keeps things encapsulated into a single requirable component,
           and provides an easy way to render static markup.
         </p>
@@ -233,7 +233,7 @@ var Tutorial = React.createClass({
           Here the Arc <code>A</code> command is being used to draw part of the inner circle.
           The first two values in the Arc command represent the x and y radii.
           The next three values are booleans representing the <code>x-axis-rotation</code>, <code>large-arc-flag</code>, and the <code>sweep-flag</code>.
-          The third value is set to <code>1</code> (true) to ensure the arc curves in the right direction.
+          The <code>sweep-flag</code> value is set to <code>1</code> (true) to ensure the arc curves in the right direction.
           The last two values are the x and y coordinates for where the arc should end.
           To read more about the Arc command see this <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths#Arcs" target="_blank">MDN tutorial</a>.
         </p>

@@ -12,7 +12,7 @@ var Header = React.createClass({
     return (
       <header className="mb3 py3">
         <div className="mb2 center">
-          <Cog size={320} fill={clrs.blue} showGuidelines />
+          <Cog size={320} showGuidelines />
         </div>
         <h3 className="h5 mt0 mb1">
           <a href="/" className="black">Jxnblk.com</a>

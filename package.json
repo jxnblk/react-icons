@@ -2,7 +2,7 @@
   "name": "react-icons",
   "title": "Building SVG Icons with React",
   "version": "1.0.0",
-  "description": "How to Create Mathematically-Derived SVG Icons Using JavaScript and React",
+  "description": "How to Create Mathematically-Generated Graphics Using JavaScript and React",
   "main": "index.js",
   "scripts": {
     "build": "node build",
