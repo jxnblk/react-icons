@@ -142,6 +142,7 @@ var Guidelines = React.createClass({displayName: "Guidelines",
     var r3 = this.props.d3 * size / 2
     var teeth = this.props.teeth
     var angle = 360 / teeth
+    var offset = 90
     var styles = {
       circle: {
         fill: 'none',
@@ -181,7 +182,7 @@ var Guidelines = React.createClass({displayName: "Guidelines",
     var drawAngles = function() {
       var d = []
       for (var i = 0; i < teeth; i++) {
-        var a = angle * i
+        var a = angle * i - offset
         var line = [
           'M', c, c,
           'L', rx(r1, a), ry(r1, a)
@@ -194,7 +195,7 @@ var Guidelines = React.createClass({displayName: "Guidelines",
     var drawSubangles = function() {
       var d = []
       for (var i = 0; i < teeth; i++) {
-        var a = angle * i
+        var a = angle * i - offset
         var a1 = a + ta + splay
         var a2 = a + angle - ta - splay
         var line = [
