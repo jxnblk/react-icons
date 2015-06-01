@@ -19,18 +19,18 @@ var Header = React.createClass({
         </h3>
         <h1 className="m0">{this.props.title}</h1>
         <h2 className="mt0">{this.props.description}</h2>
-        <div className="h6 right-align mb3">
+        <div className="h6 mb3">
           <b>{created}</b>
           {/*
           <br className="sm-hide" /> Updated: <b>{modified}</b>
           */}
         </div>
-        <div className="sm-flex flex-wrap flex-justify mxn2">
-          <div className="ml2 mr2 mt1 mb1">
+        <div className="right-align mxn2">
+          <a href="#live-demo" className="btn mt1 mb1">View Demo</a>
+          <a href="https://github.com/jxnblk/react-icons" className="btn mt1 mb1">GitHub</a>
+          <div className="inline-block ml2 mr2 mt1 mb1">
             <TweetButton {...this.props} />
           </div>
-          <a href="https://github.com/jxnblk/react-icons" className="btn mt1 mb1">View on Github</a>
-          <a href="#live-demo" className="btn mt1 mb1">View Demo</a>
         </div>
       </header>
     )
