@@ -39,7 +39,7 @@ var Tutorial = React.createClass({
         </p>
         <p>
           Although most of this could be achieved with plain JavaScript and other templating engines,
-          using a library like React allows for tight coupling between the math and the SVG code,
+          using a library like React provides high cohesion between the SVG code and the math involved,
           keeps things encapsulated into a single requirable component,
           and provides an easy way to render static markup.
         </p>
