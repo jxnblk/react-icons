@@ -1,10 +1,22 @@
 
+@import 'blk';
+@import 'basscss-input-range';
+@import 'basscss-color-input-range';
+@import 'basscss-highlight';
+
 svg {
   max-width: 100%;
   height: auto;
   max-height: 100%;
 }
 
+.prose pre { font-size: 75% }
+
+:root {
+  --container-width: 48rem;
+}
+
+/*
 pre {
   padding: var(--space-2);
   border-radius: var(--border-radius);
@@ -21,14 +33,10 @@ code {
 
 .prose p {
   line-height: 1.625;
-  /*
-  font-family: Georgia, serif;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  */
 }
 
 .prose p:first-child {
   font-size: var(--h3)
 }
 
+*/

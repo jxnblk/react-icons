@@ -2,7 +2,7 @@
 var fs = require('fs');
 var path = require('path');
 var pkg = require('../package.json')
-var cssnext = require('cssnext')
+//var cssnext = require('cssnext')
 
 
 module.exports = {
@@ -12,38 +12,38 @@ module.exports = {
   keywords: pkg.keywords,
   created: '05/31/2015',
   modified: new Date().toLocaleDateString(),
-  css: cssnext([
-    '@import "basscss";',
-    '@import "basscss-input-range";',
-    '@import "basscss-color-input-range";',
-    '@import "basscss-highlight";',
-    '@import "site/style.css";'
-  ].join(''), {
-    compress: true,
-    features: {
-      rem: false,
-      colorRgba: false,
-      customProperties: {
-        variables: {
-          'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif',
-          'heading-font-weight': '600',
-          'bold-font-weight': '600',
-          'button-font-weight': '600',
-          'button-font-size': 'var(--h6)',
-          'h1': '2.5rem',
-          'h2': '1.75rem',
-          'h3': '1.375rem',
-          'h4': '1.25rem',
-          'h5': '1rem',
-          'h6': '.875rem',
-          'pre-font-size': 'var(--h5)',
-          'container-width': '48em',
-          'black': '#134',
-          'pre-background-color': 'var(--darken-1)',
-        }
-      }
-    }
-  }),
+  //css: cssnext([
+  //  '@import "basscss";',
+  //  '@import "basscss-input-range";',
+  //  '@import "basscss-color-input-range";',
+  //  '@import "basscss-highlight";',
+  //  '@import "site/style.css";'
+  //].join(''), {
+  //  compress: true,
+  //  features: {
+  //    rem: false,
+  //    colorRgba: false,
+  //    customProperties: {
+  //      variables: {
+  //        'font-family': '"Avenir Next", "Helvetica Neue", Helvetica, sans-serif',
+  //        'heading-font-weight': '600',
+  //        'bold-font-weight': '600',
+  //        'button-font-weight': '600',
+  //        'button-font-size': 'var(--h6)',
+  //        'h1': '2.5rem',
+  //        'h2': '1.75rem',
+  //        'h3': '1.375rem',
+  //        'h4': '1.25rem',
+  //        'h5': '1rem',
+  //        'h6': '.875rem',
+  //        'pre-font-size': 'var(--h5)',
+  //        'container-width': '48em',
+  //        'black': '#134',
+  //        'pre-background-color': 'var(--darken-1)',
+  //      }
+  //    }
+  //  }
+  //}),
   code: {
     svgComponent1: fs.readFileSync(path.join(__dirname, './code-examples/svg-component-1.jsx'), 'utf8'),
     defaultProps: fs.readFileSync(path.join(__dirname, './code-examples/default-props.jsx'), 'utf8'),

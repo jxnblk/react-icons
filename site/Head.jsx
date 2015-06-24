@@ -1,5 +1,6 @@
 
 var React = require('react')
+var css = require('./style.css')
 
 var Head = React.createClass({
 
@@ -11,7 +12,7 @@ var Head = React.createClass({
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content={this.props.description} />
         <meta name="keywords" content={this.props.keywords.map(function(keyword) { return keyword }).join(', ')} />
-        <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+        <style dangerouslySetInnerHTML={{ __html: css }} />
       </head>
     )
   }

@@ -22,12 +22,17 @@
     "tutorial"
   ],
   "devDependencies": {
+    "babel-core": "^5.6.5",
+    "babel-loader": "^5.1.4",
     "basscss": "^7.0.0-beta.1",
     "basscss-color-input-range": "^1.0.0-beta.0",
     "basscss-highlight": "^0.1.0",
     "basscss-input-range": "^2.0.0-beta.0",
+    "blk": "^3.0.5",
     "colors.css": "^2.3.0",
+    "css-loader": "^0.15.1",
     "cssnext": "^1.5.2",
+    "cssnext-loader": "^1.0.1",
     "highlight.js": "^8.6.0",
     "htmltidy": "0.0.6",
     "js-beautify": "^1.5.6",

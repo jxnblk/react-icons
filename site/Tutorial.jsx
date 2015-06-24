@@ -10,7 +10,6 @@ var SunBurst = require('./examples/SunBurst.jsx')
 var FlatTeeth = require('./examples/FlatTeeth.jsx')
 var Splayed = require('./examples/Splayed.jsx')
 var CircleXY = require('./CircleXY.jsx')
-var Demo = require('./Demo.jsx')
 var TweetButton = require('./TweetButton.jsx')
 
 var Tutorial = React.createClass({
@@ -287,17 +286,6 @@ var Tutorial = React.createClass({
           Hopefully you can see how with just a little bit of math,
           React can be a powerful tool for creating flexible and precise SVG graphics.
         </p>
-
-        <div className="py3">
-          <H2>Live Demo</H2>
-          <Demo />
-        </div>
-
-        <div className="center py3">
-          <TweetButton />
-        </div>
-
-
       </div>
     )
   }
